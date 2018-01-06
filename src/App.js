@@ -1,5 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component, Fragment } from 'react';
+
+const LINKS = [
+  { name: 'git', href: 'https://github.com/amostap' },
+  { name: 'linkedin', href: 'https://www.linkedin.com/in/amostap' },
+  { name: 'twitter', href: 'https://twitter.com/amostap' },
+  { name: 'instagram', href: 'https://www.instagram.com/amostap' },
+  { name: 'vk', href: 'https://vk.com/amostap' },
+  { name: 'upwork', href: 'https://www.upwork.com/o/profiles/users/_~0180e11d0eaedb0e7c' },
+  { name: 'skype', href: 'skype:amgibson94' },
+  { name: 'email', href: 'mailto:alexandr.amostap@gmail.com?Subject=Hello%20World' }
+];
 
 export default class App extends Component {
   state = {
@@ -24,23 +34,24 @@ export default class App extends Component {
   }
 
   render() {
+    const { date } = this.state;
+
     return (
-      <div className="App">
-        <div className="main" style={ { color: `rgb(255, 255, ${this.state.date})` } }>
-          Hello World_
-        </div>
-        <div>{ this.state.date.toLocaleTimeString() }</div>
+      <Fragment>
+        <header className="header" style={ { color: `rgb(${date.getHours() * 10}, ${date.getMinutes() * 4}, ${date.getSeconds() * 4})` } }>
+          <div>
+            Hello World
+            <span class="blinking-cursor">|</span>
+          </div>
+        </header>
         <footer className="footer">
-          <a className="git" target="_blank" href="https://github.com/amostap">git</a>
-          <a className="linkedin" target="_blank" href="https://www.linkedin.com/in/amostap">linkedin</a>
-          <a className="twitter" target="_blank" href="https://twitter.com/amostap">twitter</a>
-          <a className="instagram" target="_blank" href="https://www.instagram.com/amostap">instagram</a>
-          <a className="vk" target="_blank" href="https://vk.com/amostap">vk</a>
-          <a className="upwork" target="_blank" href="https://www.upwork.com/o/profiles/users/_~0180e11d0eaedb0e7c">upwork</a>
-          <a className="skype" target="_blank" href="skype:amgibson94">skype</a>
-          <a className="email" href="mailto:alexandr.amostap@gmail.com?Subject=Hello%20World" target="_top">email</a>
+          {
+            LINKS.map(link => (
+              <a className={link.name} target="_blank" href={link.href}>{link.name}</a>
+            ))
+          }
         </footer>
-      </div>
+      </Fragment>
     );
   }
 }

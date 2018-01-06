@@ -1,5 +1,122 @@
 body {
-  border-top: 5px solid #0d8c91;
+  border-top: 3px solid #0d8c91;
   margin: 0;
   font-family: 'Inconsolata', monospace;
+}
+
+.header {
+  transition: all 1s;
+  text-align: center;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 28px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+.footer {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #444;
+}
+
+a:hover {
+  text-decoration: overline;
+}
+
+.git:hover {
+  color: #181717;
+}
+
+.linkedin:hover {
+  color: #0077B5;
+}
+
+.twitter:hover {
+  color: #1DA1F2;
+}
+
+.instagram:hover {
+  color: #E4405F;
+}
+
+.vk:hover {
+  color: #6383A8;
+}
+
+.skype:hover {
+  color: #00AFF0;
+}
+
+.email:hover {
+  color: #D14836;
+}
+
+.upwork:hover {
+  color: #37a000;
 }
